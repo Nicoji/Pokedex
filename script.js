@@ -53,8 +53,8 @@ const previousScreen = () => {
 }
 
 const displayLeftScreen = (event) => {
-    const lignValue = event.target.textContent;
-    const getId = lignValue.split('.');
+    const lineValue = event.target.textContent;
+    const getId = lineValue.split('.');
     id = getId[0];
     getPokemonInfo(id);
 }
