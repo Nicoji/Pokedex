@@ -133,13 +133,15 @@ const getPokemonInfo = (id) => {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    pokemonName.textContent = data['names'][6]['name'];
+                    console.log(data);
+                    
+                    pokemonName.textContent = data['names'][4]['name'];
                     const descriptionArray = data['flavor_text_entries'];
                     
-                    if(descriptionArray[5]['language']['name'] == "fr") {
-                        frIndex = 5;
+                    if(descriptionArray[24]['language']['name'] == "fr") {
+                        frIndex = 24;
                     } else {
-                        frIndex = 6;
+                        frIndex = 25;
                     }
                     description.textContent = '"' + data['flavor_text_entries'][frIndex]['flavor_text'] + '"';
                 });
@@ -152,7 +154,7 @@ const displayPokemonList = (url) => {
         fetch("https://pokeapi.co/api/v2/pokemon-species/151")
         .then(response => response.json())
         .then(data => {
-            const name = data['names'][6]['name'];
+            const name = data['names'][4]['name'];
             const id = data['id'].toString() + ". ";
             listPokemon[0].textContent = id + name; 
             for(let i = 1; i < 15; i++) {
@@ -174,7 +176,7 @@ const displayPokemonList = (url) => {
                 fetch("https://pokeapi.co/api/v2/pokemon-species/" + englishName)
                     .then(response => response.json())
                     .then(data => {
-                        const nameArray = data['names'][6]['name'];
+                        const nameArray = data['names'][4]['name'];
                         const id = data['id'].toString() + ". ";
                         listPokemon[i].textContent = id + nameArray;   
                     });

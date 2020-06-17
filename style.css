@@ -1,6 +1,8 @@
 body {
-    background: linear-gradient(to right top, #375dab 40%, #ffcd2d);
-    height: 777px;
+    background: url(https://images6.alphacoders.com/617/617332.png) no-repeat;
+    background-size: cover;
+    height: 830px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 ul {
@@ -41,10 +43,13 @@ td, th {
     color: #000;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     display: flex;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .left-side {
@@ -289,9 +294,17 @@ td, th {
     justify-content: space-between;
 }
 
-.credit {
-    display: block;
+.credit-section {
     text-align: center;
+}
+
+.credit {
+    font-size: 25px;
+}
+
+.icon-credit {
+    display: block;
+    text-align: right;
     margin-top: 50px;
     text-decoration: none;
     color: #000000;
