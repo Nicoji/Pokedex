@@ -133,7 +133,6 @@ const getPokemonInfo = (id) => {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
                     
                     pokemonName.textContent = data['names'][4]['name'];
                     const descriptionArray = data['flavor_text_entries'];
