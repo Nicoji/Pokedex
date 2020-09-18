@@ -28,9 +28,8 @@ let nextUrl = '';
 
 // Functions : 
 const startPokedex = () => {
-    event.preventDefault();
 
-    if(leftScreen.classList.contains('hide') && infoScreen.classList.contains('hide')) {
+    if(leftScreen.classList.contains('hide') && rightScreen.classList.contains('hide')) {
         startSignal.setAttribute('id', 'signal-on');
         leftScreen.classList.remove('hide');
         rightScreen.classList.remove('hide');
@@ -77,7 +76,7 @@ const getPokemonInfo = (id) => {
     if(leftScreen.classList.contains('hide')) {
         leftScreen.classList.remove('hide');
         infoScreen.classList.add('hide')
-    }
+    } 
 
     fetch("https://pokeapi.co/api/v2/pokemon/" + id)
         .then(response => response.json())
@@ -103,7 +102,6 @@ const getPokemonInfo = (id) => {
         
             pokedexNumber.textContent = index + data['id'].toString();
             const typeOneUrl = data['types'][0]['type']['url'];
-            // typeOne.textContent = data['types'][0]['type']['name'];
             typeOne.removeAttribute('id');
             typeOne.setAttribute('id', data['types'][0]['type']['name']);
             
@@ -115,7 +113,6 @@ const getPokemonInfo = (id) => {
 
             if(data['types'][1]){
                 const typeTwoUrl = data['types'][1]['type']['url'];
-                //typeTwo.textContent = data['types'][1]['type']['name'];
                 typeTwo.classList.remove('hide');
                 typeTwo.removeAttribute('id');
                 typeTwo.setAttribute('id', data['types'][1]['type']['name']);
